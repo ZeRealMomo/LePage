@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php require_once 'connect.php'; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Momo's D'e Homepage</title>
@@ -24,8 +25,10 @@
     <main>
         <nav class="homepage">
             <section id="home">
-                <h1>Greetings, I'm Mozart Kereh!</h1>
-                <p>Mahasiswa Universitas Sam Ratulangi.</p>
+                <h1>Greetings, I'm <?php
+                $row = mysqli_fetch_assoc($result); echo $row['name']; ?>!</h1>
+                
+                <br>Mahasiswa Universitas <?php echo $row['kampus']; ?>.</br>
             </section>     
         </nav>
 
